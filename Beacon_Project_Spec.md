@@ -843,14 +843,20 @@ Rules:
 
 ### States every screen must handle
 
-| State | What to show |
-| --- | --- |
-| Loading | Skeleton rows, not a spinner over the page |
-| Empty | Dashboard with no monitors: one sentence and an "Add monitor" button |
-| Error | A message with a "Try again" button; never a blank page |
-| Checking | A new monitor before its first result: grey "Checking" pill, dashes for values |
-| Paused | Grey "Paused" pill; strip and chart stop; "Resume" replaces "Pause" |
-| Stream closed | Live indicator reads "Reconnecting"; data stays visible |
+| State | What to show | Screen in the design canvas |
+| --- | --- | --- |
+| Loading | Skeleton cards and rows, not a spinner over the page | 12. Dashboard loading |
+| Empty | Dashboard with no monitors: one sentence and an "Add monitor" button | 11. Empty dashboard |
+| Error | A message with a "Try again" button; never a blank page | 13. Dashboard could not load |
+| Checking | A new monitor before its first result: grey "Checking" pill, "Not yet" for the last check, "No data" for response and uptime, flat grey strip | 10. Row states |
+| Paused | Grey "Paused" pill; strip turns grey and stops; last check reads "Paused 2 h ago"; "Resume" replaces "Pause" | 10. Row states |
+| Stream closed | Live indicator reads "Reconnecting"; data stays visible | 10. Row states |
+| Form rejected | A summary above the form and one message under each wrong field (FE-5); the typed values stay | 14. Add monitor form with errors |
+| Test alert result | A green "Test alert sent" or an orange "Test alert failed" banner with the reason, above the buttons | 15. Test alert results |
+| Destructive action | A dialog naming the item, what is lost, and that it cannot be undone; "Cancel" is the default button | 16. Confirm delete dialog |
+
+The same loading, empty and error treatment applies to the monitor detail,
+incidents and settings pages; only the dashboard versions are drawn.
 
 ### Design tokens
 
