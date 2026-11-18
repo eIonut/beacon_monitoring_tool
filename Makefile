@@ -1,10 +1,19 @@
-.PHONY: up down test build lint
+.PHONY: up down migrate migrate-down migrate-status test build lint
 
 up:
-	@echo "not implemented yet"
+	docker compose up -d --wait postgres adminer
 
 down:
-	@echo "not implemented yet"
+	docker compose down
+
+migrate:
+	docker compose run --rm migrate
+
+migrate-down:
+	docker compose run --rm -e GOOSE_COMMAND=down migrate
+
+migrate-status:
+	docker compose run --rm -e GOOSE_COMMAND=status migrate
 
 test:
 	go test ./...
