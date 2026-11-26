@@ -51,8 +51,8 @@ Compose file with `postgres` and a one-shot `migrate` service running goose.
 `P1` · 1.5 h · Depends on: BCN-01
 GitHub Actions workflow: build, `go vet`, linter, tests, on every push and pull request.
 
-- [ ] A failing test fails the workflow
-- [ ] Workflow finishes in under five minutes
+- [x] A failing test fails the workflow
+- [x] Workflow finishes in under five minutes
 
 ### BCN-04 Fake target server
 
